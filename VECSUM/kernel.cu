@@ -54,8 +54,7 @@ int main() {
     std::chrono::duration<double> elapsed_time = std::chrono::duration_cast<std::chrono::duration<double>>(end_time - start_time);
     double elapsed_seconds = elapsed_time.count();
     double cpu_time_taken = double(endcpu - startcpu) / CLOCKS_PER_SEC;
-    std::cout << "Time (CPU): " << std::setprecision(9) << elapsed_seconds << " seconds\n" << "CPU result:" << cpu_sumres << std::endl;
-    //printf("Total time: %f \n", (float)(endcpu - startcpu) / 1000000);
+    std::cout << "Time (CPU): "  << elapsed_seconds << " seconds\n" << "CPU result:" << cpu_sumres << std::endl;
     cudaMalloc((void**)&d_sum, sizeof(int));
 
     // Копируем вектор с хоста на устройство
